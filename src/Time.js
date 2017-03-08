@@ -9,10 +9,11 @@ import moment from 'moment/min/moment-with-locales.min';
 
 export default class Time extends React.Component {
   render() {
+    const name = this.props.currentMessage.user._id == this.props.user._id ? "you" : this.props.currentMessage.user.name.toLowerCase()
     return (
       <View style={[styles[this.props.position].container, this.props.containerStyle[this.props.position]]}>
         <Text style={[styles[this.props.position].text, this.props.textStyle[this.props.position]]}>
-          {moment(this.props.currentMessage.createdAt).locale(this.context.getLocale()).format('LT')}
+          {`${name}, ${moment(this.props.currentMessage.createdAt).locale(this.context.getLocale()).format('LT')}`}
         </Text>
       </View>
     );
