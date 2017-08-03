@@ -15,11 +15,7 @@ export default class Time extends React.Component {
     return (
       <View style={[styles[this.props.position].container, this.props.containerStyle[this.props.position]]}>
         <Text style={[styles[this.props.position].text, this.props.textStyle[this.props.position]]}>
-<<<<<<< HEAD
-          {`${name}, ${moment(this.props.currentMessage.createdAt).locale(this.context.getLocale()).format('LT')}`}
-=======
-          {moment(this.props.currentMessage.createdAt).locale(this.context.getLocale()).format(this.props.timeFormat)}
->>>>>>> 4d11276e993eb17429dff77dea5e166913acbec9
+          {`${name}, ${moment(this.props.currentMessage.createdAt).locale(this.context.getLocale()).format(this.props.timeFormat)}`}
         </Text>
       </View>
     );
